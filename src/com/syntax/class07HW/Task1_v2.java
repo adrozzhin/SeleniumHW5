@@ -59,7 +59,7 @@ public class Task1_v2 {
         System.out.println("New window text: " + newWindowText.getText());
 
         driver.switchTo().window(newWindowMessageHandle);
-        WebElement newWindowMessageText = driver.findElement(By.xpath("//body[contains(text(),'Knowledge')]"));
+        WebElement newWindowMessageText = driver.findElement(By.xpath("//body"));
         System.out.println("New Window Message text: " + newWindowMessageText.getText());
         driver.switchTo().window(mainPageHandle);
         String mainTitle = driver.getTitle();
