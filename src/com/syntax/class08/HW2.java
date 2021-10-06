@@ -13,7 +13,7 @@ public class HW2 extends CommonMethods {
         navigateBack();
         Thread.sleep(1000);
         navigateForward();
-        implicitlyWait10sec();
+        implicitlyWait20sec();
         getUrl("https://www.amazon.com/");
         Thread.sleep(1000);
         navigateRefresh();

@@ -46,30 +46,49 @@ public class Task1 {
         mainPageHandle = it.next();
         String newTabHandle = it.next();
         String newWindowHandle = it.next();
-        //String newWindowMessageHandle = it.next();
+        String newWindowMessageHandle = it.next();
         System.out.println(newTabHandle);
         System.out.println(newWindowHandle);
-        //System.out.println(newWindowMessageHandle);
-        driver.switchTo().window(mainPageHandle);
+        System.out.println(newWindowMessageHandle);
+
         driver.switchTo().window(newTabHandle);
         WebElement newTabText = driver.findElement(By.id("sampleHeading"));
         System.out.println("New tab text: " + newTabText.getText());
-        //driver.close();
-        driver.switchTo().window(mainPageHandle);
 
         driver.switchTo().window(newWindowHandle);
         WebElement newWindowText = driver.findElement(By.id("sampleHeading"));
         System.out.println("New window text: " + newWindowText.getText());
 
-//        driver.switchTo().window(newWindowMessageHandle);
-//        WebElement newWindowMessageText = driver.findElement(By.xpath("//body[contains(text(),'Knowledge')]"));
-//        System.out.println("New Window Message text: " + newWindowMessageText.getText());
-//        driver.switchTo().window(mainPageHandle);
-//        newWindowButton.click();
-//        String newWindowHandle = it.next();
-//        System.out.println(newWindowHandle);
-//        driver.switchTo().window(newWindowHandle);
-//        WebElement newWindowText = driver.findElement(By.linkText("This is a sample page"));
-//        System.out.println("New window text: " +newWindowText.getText());
+        driver.switchTo().window(newWindowMessageHandle);
+        WebElement newWindowMessageText = driver.findElement(By.xpath("//body"));
+        System.out.println("New Window Message text: " + newWindowMessageText.getText());
+        driver.switchTo().window(mainPageHandle);
+        String mainTitle = driver.getTitle();
+        if(mainTitle.isEmpty()) {
+            System.out.println("There is NO title on the main page");
+        } else {
+            System.out.println("There is a title displayed on the main page: " + mainTitle);
+        }
+        driver.switchTo().window(newTabHandle);
+        String newTabTitle = driver.getTitle();
+        if(newTabTitle.isEmpty()) {
+            System.out.println("There is NO title on the New Tab page");
+        } else {
+            System.out.println("There is a title displayed on the New Tab page: " + newTabTitle);
+        }
+        driver.switchTo().window(newWindowHandle);
+        String newWindowTitle = driver.getTitle();
+        if(newWindowTitle.isEmpty()) {
+            System.out.println("There is NO title on the New Window page");
+        } else {
+            System.out.println("There is a title displayed on the New Window page: " + newWindowTitle);
+        }
+        driver.switchTo().window(newWindowMessageHandle);
+        String newWindowMessageTitle = driver.getTitle();
+        if(newWindowMessageTitle.isEmpty()) {
+            System.out.println("There is NO title on the New Window Message page");
+        } else {
+            System.out.println("There is a title displayed on the New Window Message page: " + newWindowMessageTitle);
+        }
     }
 }

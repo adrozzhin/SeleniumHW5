@@ -23,7 +23,7 @@ public class Task2 {
         driver.get(url);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
-        WebElement ajaxLink = driver.findElement(By.linkText("This is a Ajax link"));
+        WebElement ajaxLink = driver.findElement(By.linkText("This is a Ajax link")); ////a[@data-ajax-loading='#LoadImage']
         ajaxLink.click();
         WebElement text = driver.findElement(By.xpath("//div[@class = 'ContactUs']/*"));
         System.out.println("Text: " + text.getText());

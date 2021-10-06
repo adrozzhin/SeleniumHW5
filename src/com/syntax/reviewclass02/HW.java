@@ -34,7 +34,7 @@ public class HW {
         if (present==true) {
             System.out.println("'Password cannot be empty' message is exist and displayed on the page");
         } else {
-            System.out.println("'Password cannot be empty' message is NOT exist and displayed on the page");
+            System.out.println("'Password cannot be empty' message is NOT exist and NOT displayed on the page");
         }
     }
 }

@@ -39,8 +39,8 @@ public class CommonMethods {
     public static String getTitle() {
         return driver.getTitle();
     }
-    public static void implicitlyWait10sec() {
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    public static void implicitlyWait20sec() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
 
